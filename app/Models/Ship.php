@@ -14,6 +14,16 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Ship extends Model
 {
+    public const FILLABLE = [
+        'title',
+        'spec',
+        'description',
+        'ordering',
+        'state',
+    ];
+
+    protected $fillable = self::FILLABLE;
+
     protected $casts = [
         'spec' => 'array',
         'state' => 'int'

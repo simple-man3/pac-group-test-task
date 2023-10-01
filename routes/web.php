@@ -10,3 +10,7 @@ Route::prefix('/ship')->group(function () {
     Route::patch('/{id}', [ShipController::class, 'patch']);
     Route::delete('/{id}', [ShipController::class, 'delete']);
 });
+
+Route::get('/', function () {
+    return 'home_page';
+});

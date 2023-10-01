@@ -2,18 +2,18 @@
 
 namespace App\Models\CabinCategory\Actions;
 
-use App\Models\Ship;
+use App\Models\CabinCategory\Models\CabinCategory;
 use Illuminate\Support\Arr;
 
 class PatchCabinCategoryAction
 {
-    public function execute(int $id, array $fields): Ship
+    public function execute(int $id, array $fields): CabinCategory
     {
-        $ship = Ship::findOrFail($id);
-        $ship->fill(Arr::only($fields, Ship::FILLABLE));
+        $cabinCategory = CabinCategory::findOrFail($id);
+        $cabinCategory->fill(Arr::only($fields, CabinCategory::FILLABLE));
 
-        $ship->save();
+        $cabinCategory->save();
 
-        return $ship;
+        return $cabinCategory;
     }
 }

@@ -2,18 +2,18 @@
 
 namespace App\Models\CabinCategory\Actions;
 
-use App\Models\Ship;
+use App\Models\CabinCategory\Models\CabinCategory;
 use Illuminate\Support\Arr;
 
 class CreateCabinCategoryAction
 {
-    public function execute(array $fields): Ship
+    public function execute(array $fields): CabinCategory
     {
-        $ship = new Ship();
-        $ship->fill(Arr::only($fields, Ship::FILLABLE));
+        $cabinCategory = new CabinCategory();
+        $cabinCategory->fill(Arr::only($fields, CabinCategory::FILLABLE));
 
-        $ship->save();
+        $cabinCategory->save();
 
-        return $ship;
+        return $cabinCategory;
     }
 }

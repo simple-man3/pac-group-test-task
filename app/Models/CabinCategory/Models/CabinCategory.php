@@ -3,7 +3,9 @@
 namespace App\Models\CabinCategory\Models;
 
 use App\Http\Enums\TypesShipEnum;
+use App\Models\Ship\Models\Ship;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property int $id - ID категории кабины
@@ -18,8 +20,30 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CabinCategory extends Model
 {
+    public const FILLABLE = [
+        'ship_id',
+        'vendor_code',
+        'title',
+        'type',
+        'description',
+        'photos',
+        'ordering',
+        'state',
+    ];
+
+    protected $fillable = self::FILLABLE;
+
     protected $casts = [
         'photos' => 'array',
         'state' => 'int'
     ];
+
+    protected $attributes = array(
+        'photos' => []
+    );
+
+    public function ship(): BelongsTo
+    {
+        return $this->belongsTo(Ship::class);
+    }
 }

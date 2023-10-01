@@ -2,12 +2,12 @@
 
 namespace App\Models\CabinCategory\Actions;
 
-use App\Models\Ship;
+use App\Models\CabinCategory\Models\CabinCategory;
 
 class GetCabinCategoryAction
 {
-    public function execute(int $id): Ship
+    public function execute(int $id): CabinCategory
     {
-        return Ship::findOrFail($id);
+        return CabinCategory::findOrFail($id);
     }
 }

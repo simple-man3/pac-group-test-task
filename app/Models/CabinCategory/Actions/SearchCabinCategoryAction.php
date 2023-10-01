@@ -2,13 +2,13 @@
 
 namespace App\Models\CabinCategory\Actions;
 
-use App\Models\Ship;
+use App\Models\CabinCategory\Models\CabinCategory;
 use Illuminate\Database\Eloquent\Collection;
 
 class SearchCabinCategoryAction
 {
     public function execute(): Collection
     {
-        return Ship::query()->all();
+        return CabinCategory::query()->all();
     }
 }

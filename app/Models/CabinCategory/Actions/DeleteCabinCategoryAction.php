@@ -2,13 +2,12 @@
 
 namespace App\Models\CabinCategory\Actions;
 
-use App\Models\Ship;
-use Illuminate\Support\Arr;
+use App\Models\CabinCategory\Models\CabinCategory;
 
 class DeleteCabinCategoryAction
 {
     public function execute(int $id): void
     {
-        Ship::destroy($id);
+        CabinCategory::destroy($id);
     }
 }

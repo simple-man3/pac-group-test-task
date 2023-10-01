@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Modules\Ship\Resources;
+namespace App\Http\Controllers\Modules\CabinCategory\Resources;
 
-use App\Models\Ship\Models\Ship;
+use App\Models\CabinCategory\Models\CabinCategory;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 /**
- * @mixin Ship
+ * @mixin CabinCategory
  */
-class ShipResource extends JsonResource
+class CabinCategoryResource extends JsonResource
 {
     public function toArray($request): array
     {

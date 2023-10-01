@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Ship\Models;
 
+use App\Models\CabinCategory\Models\CabinCategory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property int $id - ID корабля
@@ -28,4 +30,9 @@ class Ship extends Model
         'spec' => 'array',
         'state' => 'int'
     ];
+
+    public function cabinCategories(): HasMany
+    {
+        return $this->hasMany(CabinCategory::class);
+    }
 }
